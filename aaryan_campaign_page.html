@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaryan Sahu - Regional Coordinator Chandigarh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #6366f1;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #6366f1;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #6366f1;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23667eea" width="1200" height="600"/><polygon fill="%23764ba2" points="0,600 1200,300 1200,600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #f59e0b, #f97316);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.4s both;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            padding: 80px 0;
+            background: white;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section:nth-child(even) {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #6366f1, #8b5cf6);
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #6366f1, #8b5cf6);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .contact-info {
+            margin-top: 1.5rem;
+            text-align: left;
+        }
+
+        .contact-info h4 {
+            color: #6366f1;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item span {
+            font-size: 1.1rem;
+        }
+
+        .linkedin-button {
+            display: inline-block;
+            background: #0077b5;
+            color: white;
+            padding: 8px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .linkedin-button:hover {
+            background: #005885;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 119, 181, 0.4);
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .achievement-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #6366f1;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .achievement-card h3 {
+            color: #6366f1;
+            margin-bottom: 1rem;
+        }
+
+        .manifesto {
+            background: white;
+            color: #333;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 80px 0;
+        }
+
+        .manifesto h2 {
+            color: #333;
+        }
+
+        .manifesto-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .point-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #6366f1;
+        }
+
+        .point-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .point-card h3 {
+            margin-bottom: 1rem;
+            color: #6366f1;
+        }
+
+        /* Larger font sizes for specific sections */
+        .vote-for-me h3 {
+            font-size: 1.8rem !important;
+            margin-bottom: 1.5rem;
+        }
+
+        .vote-for-me .point-content {
+            font-size: 1.15rem;
+        }
+
+        .commitment h3 {
+            font-size: 1.8rem !important;
+            margin-bottom: 1.5rem;
+        }
+
+        .commitment p {
+            font-size: 1.25rem !important;
+            line-height: 1.7;
+        }
+
+        .bottom-cta {
+            background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .bottom-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .bottom-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .bottom-cta .tagline {
+            font-style: italic;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            main {
+                margin-top: 80px;
+            }
+
+            .vote-for-me h3 {
+                font-size: 1.5rem !important;
+            }
+
+            .vote-for-me .point-content {
+                font-size: 1.1rem;
+            }
+
+            .commitment h3 {
+                font-size: 1.5rem !important;
+            }
+
+            .commitment p {
+                font-size: 1.15rem !important;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(45deg, #6366f1, #8b5cf6);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1001;
+            transition: transform 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Aaryan Sahu</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#manifesto">Manifesto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Aaryan Sahu</h1>
+                    <p>Candidate for Regional Coordinator - Chandigarh Region<br>Nallamala House, UHC Election IIT Madras</p>
+                    <a href="#manifesto" class="cta-button">View My Manifesto</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="profile-card">
+                        <div class="profile-image">AS</div>
+                        <h3>Aaryan Sahu</h3>
+                        <p>BS Data Science & Applications<br>IIT Madras</p>
+                        <p><strong>CGPA: 8.88</strong></p>
+                        
+                        <div class="contact-info">
+                            <h4>Contact Information</h4>
+                            <div class="contact-item">
+                                <span>📍</span>
+                                <p>Bhopal, Madhya Pradesh</p>
+                            </div>
+                            <div class="contact-item">
+                                <span>📧</span>
+                                <p>24f2001366@ds.study.iitm.ac.in</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/aaryan-sahu-791790310" target="_blank" class="linkedin-button">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                    <div>
+                        <p>I am a dedicated student pursuing BS in Data Science and Applications from IIT Madras, currently at the Diploma level with a strong academic record of 8.88 CGPA. My passion lies in leveraging technology and data science to create meaningful impact in our community.</p>
+                        <p>As an active member of various societies and organizations, I have consistently demonstrated leadership qualities and a commitment to excellence. My involvement in research, content creation, and volunteer work has equipped me with the skills necessary to effectively represent and serve the Chandigarh Region.</p>
+                        <p>I believe in building bridges between students and administration, fostering a culture of collaboration, and ensuring that every voice in our region is heard and valued.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="section">
+            <div class="container">
+                <h2>My Achievements & Roles</h2>
+                <div class="achievements">
+                    <div class="achievement-card">
+                        <h3>🏆 AWS DeepRacer Champion</h3>
+                        <p><strong>January 2025:</strong> Achieved remarkable rankings in AWS DeepRacer Student League</p>
+                        <ul>
+                            <li>🇮🇳 India Ranking: 2nd out of 274 participants</li>
+                            <li>🌏 Asia Pacific: 13th out of 424 participants</li>
+                            <li>🌍 Global: 20th out of 1,316 participants</li>
+                        </ul>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>🥉 Previous AWS Achievement</h3>
+                        <p><strong>September 2024:</strong> Secured 3rd rank in AWS DeepRacer Virtual Race at IIT Madras</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>🗺️ Trip Coordinator</h3>
+                        <p><strong>Boundless Society:</strong> Organizing and coordinating travel experiences for fellow students</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>🔬 Research Team Member</h3>
+                        <p><strong>Boundless Society:</strong> Contributing to research initiatives and academic projects</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>✍️ Content Writer</h3>
+                        <p><strong>Raahat Society:</strong> Creating impactful content and communications</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>🤝 Volunteer</h3>
+                        <p><strong>Takemori Kai: The Study Club:</strong> Supporting educational initiatives and peer learning</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="manifesto" class="section manifesto">
+            <div class="container">
+                <h2>My Manifesto</h2>
+                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem;">
+                    Building Bridges, Fostering Excellence, Empowering Every Student
+                </p>
+                <div class="manifesto-points">
+                    <div class="point-card">
+                        <h3>💻 Tech Empowerment for All</h3>
+                        <p><strong>Coding Circles</strong> & DSA Peer Prep sessions to strengthen technical foundations</p>
+                        <p><strong>Cloud, AI/ML, Cybersecurity, Blockchain, and Web3</strong> sessions designed for beginners & enthusiasts</p>
+                        <p><strong>Hands-on Projects</strong> and demo sessions for practical, real-world learning</p>
+                        <p><strong>"Tech & Talk" Meetups</strong> to discuss latest tools, trends, and tech career pathways</p>
+                    </div>
+                    <div class="point-card">
+                        <h3>🤝 Stronger Connections</h3>
+                        <p><strong>Offline Meetup:</strong> Let's finally meet, connect, and collaborate in person</p>
+                        <p><strong>Monthly Bonding Events:</strong> Ice-breakers, games, and regional celebrations</p>
+                        <p><strong>Respectful & Safe Community:</strong> Inclusive of all backgrounds, interests, and voices</p>
+                    </div>
+                    <div class="point-card">
+                        <h3>🎯 Career & Academic Support</h3>
+                        <p><strong>Internship & Placement Sharing:</strong> Regular updates and guidance</p>
+                        <p><strong>Mentorship Network:</strong> Seniors helping juniors academically & professionally</p>
+                        <p><strong>Study Groups & Shared Resources:</strong> Collaborative learning to beat academic stress</p>
+                        <p><strong>Skill Development Workshops:</strong> Focused on communication, leadership, and technical growth</p>
+                    </div>
+                    <div class="point-card">
+                        <h3>📢 Advocacy & Representation</h3>
+                        <p><strong>Strong Representation</strong> in all Nallamala House discussions</p>
+                        <p><strong>Term-wise Feedback Sessions</strong> to listen and act on your input</p>
+                        <p><strong>Open Communication Policy:</strong> Every doubt matters, every idea welcome</p>
+                    </div>
+                </div>
+                <div style="margin-top: 3rem;">
+                    <div class="point-card vote-for-me">
+                        <h3>🗳️ Why Vote for Me?</h3>
+                        <div class="point-content" style="margin-top: 1rem;">
+                            <div style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                                <span style="color: #22c55e; font-weight: bold; font-size: 1.2rem;">✓</span>
+                                <span>Proven track record in AWS competitions and societies.</span>
+                            </div>
+                            <div style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                                <span style="color: #22c55e; font-weight: bold; font-size: 1.2rem;">✓</span>
+                                <span>Balanced focus on tech, community, mentorship, and collaboration.</span>
+                            </div>
+                            <div style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                                <span style="color: #22c55e; font-weight: bold; font-size: 1.2rem;">✓</span>
+                                <span>Practical plans: tech sessions, offline meetups, and study circles.</span>
+                            </div>
+                            <div style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                                <span style="color: #22c55e; font-weight: bold; font-size: 1.2rem;">✓</span>
+                                <span>Advocacy-driven: open-door policy and feedback sessions each term.</span>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                <span style="color: #22c55e; font-weight: bold; font-size: 1.2rem;">✓</span>
+                                <span>Committed to turning our region into a thriving, inclusive space.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="point-card commitment" style="margin-top: 2rem;">
+                        <h3>🤝 My Commitment to You</h3>
+                        <p style="margin-top: 1rem;">
+                            As your Regional Coordinator, I pledge to create an environment where technology meets community, where learning is collaborative, and where every student in the Chandigarh region has the support they need to excel. Together, we'll build a stronger, more connected, and more empowered community.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bottom-cta">
+            <div class="container">
+                <h2>Vote Aaryan Sahu for Regional Coordinator</h2>
+                <p>Let's turn our region into a connected, thriving, and student-first space.</p>
+                <p class="tagline">Disciplined. Dedicated. Driven by Community.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Aaryan Sahu - Candidate for Regional Coordinator, Chandigarh Region | Nallamala House, IIT Madras</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll indicator
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.querySelector('.scroll-indicator').style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Animate cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.achievement-card, .point-card, .profile-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
