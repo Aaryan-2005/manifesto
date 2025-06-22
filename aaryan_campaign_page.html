@@ -14,8 +14,8 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+            color: #e5e7eb;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
             min-height: 100vh;
         }
 
@@ -26,14 +26,15 @@
         }
 
         header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
         }
 
         nav {
@@ -58,7 +59,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: #e5e7eb;
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
@@ -88,7 +89,7 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23667eea" width="1200" height="600"/><polygon fill="%23764ba2" points="0,600 1200,300 1200,600"/></svg>');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23334155" width="1200" height="600"/><polygon fill="%23475569" points="0,600 1200,300 1200,600"/></svg>');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -107,7 +108,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            background: linear-gradient(45deg, transparent 30%, rgba(99, 102, 241, 0.1) 50%, transparent 70%);
             animation: shimmer 3s infinite;
         }
 
@@ -130,7 +131,7 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #f59e0b, #f97316);
+            background: linear-gradient(45deg, #6366f1, #8b5cf6);
             color: white;
             padding: 15px 30px;
             text-decoration: none;
@@ -138,12 +139,12 @@
             font-weight: bold;
             transition: all 0.3s ease;
             animation: fadeInUp 1s ease 0.4s both;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
         }
 
         @keyframes fadeInUp {
@@ -159,21 +160,22 @@
 
         .section {
             padding: 80px 0;
-            background: white;
+            background: #1e293b;
             margin: 40px 0;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(99, 102, 241, 0.1);
         }
 
         .section:nth-child(even) {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            background: linear-gradient(135deg, #334155 0%, #475569 100%);
         }
 
         .section h2 {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #333;
+            color: #f1f5f9;
             position: relative;
         }
 
@@ -197,16 +199,18 @@
         }
 
         .profile-card {
-            background: white;
+            background: #0f172a;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             text-align: center;
             transition: transform 0.3s ease;
+            border: 1px solid rgba(99, 102, 241, 0.2);
         }
 
         .profile-card:hover {
             transform: translateY(-10px);
+            border-color: rgba(99, 102, 241, 0.4);
         }
 
         .profile-image {
@@ -221,6 +225,15 @@
             font-size: 3rem;
             color: white;
             font-weight: bold;
+        }
+
+        .profile-card h3 {
+            color: #f1f5f9;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-card p {
+            color: #cbd5e1;
         }
 
         .contact-info {
@@ -245,6 +258,10 @@
             font-size: 1.1rem;
         }
 
+        .contact-item p {
+            color: #cbd5e1;
+        }
+
         .linkedin-button {
             display: inline-block;
             background: #0077b5;
@@ -265,6 +282,12 @@
             box-shadow: 0 6px 20px rgba(0, 119, 181, 0.4);
         }
 
+        .about-content > div:last-child p {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
         .achievements {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -273,17 +296,19 @@
         }
 
         .achievement-card {
-            background: white;
+            background: #0f172a;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
             border-left: 5px solid #6366f1;
+            border: 1px solid rgba(99, 102, 241, 0.2);
         }
 
         .achievement-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(99, 102, 241, 0.4);
         }
 
         .achievement-card h3 {
@@ -291,17 +316,36 @@
             margin-bottom: 1rem;
         }
 
+        .achievement-card p {
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-card ul {
+            color: #e5e7eb;
+            padding-left: 1.5rem;
+        }
+
+        .achievement-card li {
+            margin-bottom: 0.5rem;
+        }
+
         .manifesto {
-            background: white;
-            color: #333;
+            background: #1e293b;
+            color: #e5e7eb;
             margin: 40px 0;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             padding: 80px 0;
+            border: 1px solid rgba(99, 102, 241, 0.1);
         }
 
         .manifesto h2 {
-            color: #333;
+            color: #f1f5f9;
+        }
+
+        .manifesto > div > p {
+            color: #cbd5e1;
         }
 
         .manifesto-points {
@@ -312,17 +356,19 @@
         }
 
         .point-card {
-            background: white;
+            background: #0f172a;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
             border-left: 5px solid #6366f1;
+            border: 1px solid rgba(99, 102, 241, 0.2);
         }
 
         .point-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(99, 102, 241, 0.4);
         }
 
         .point-card h3 {
@@ -330,31 +376,49 @@
             color: #6366f1;
         }
 
-        /* Larger font sizes for specific sections */
-        .vote-for-me h3 {
+        .point-card p {
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
+
+        /* Special styling for "Why Vote for Me?" section */
+        .why-vote-section h3 {
             font-size: 1.8rem !important;
             margin-bottom: 1.5rem;
         }
 
-        .vote-for-me .point-content {
-            font-size: 1.15rem;
+        .why-vote-section .vote-point {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
         }
 
-        .commitment h3 {
+        .why-vote-section .vote-point span:last-child {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #e5e7eb;
+        }
+
+        /* Special styling for "My Commitment to You" section */
+        .commitment-section h3 {
             font-size: 1.8rem !important;
             margin-bottom: 1.5rem;
         }
 
-        .commitment p {
-            font-size: 1.25rem !important;
-            line-height: 1.7;
+        .commitment-section p {
+            font-size: 1.3rem !important;
+            line-height: 1.6;
+            font-weight: 500;
+            color: #e5e7eb !important;
         }
 
         .bottom-cta {
-            background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
             text-align: center;
             padding: 4rem 0;
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
         }
 
         .bottom-cta h2 {
@@ -366,19 +430,22 @@
         .bottom-cta p {
             font-size: 1.3rem;
             margin-bottom: 1rem;
+            color: #cbd5e1;
         }
 
         .bottom-cta .tagline {
             font-style: italic;
             font-size: 1.1rem;
             opacity: 0.9;
+            color: #94a3b8;
         }
 
         footer {
-            background: #1f2937;
-            color: white;
+            background: #0f172a;
+            color: #94a3b8;
             text-align: center;
             padding: 2rem 0;
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
         }
 
         @media (max-width: 768px) {
@@ -399,20 +466,18 @@
                 margin-top: 80px;
             }
 
-            .vote-for-me h3 {
+            /* Responsive adjustments for special sections */
+            .why-vote-section h3,
+            .commitment-section h3 {
                 font-size: 1.5rem !important;
             }
 
-            .vote-for-me .point-content {
+            .why-vote-section .vote-point span:last-child {
                 font-size: 1.1rem;
             }
 
-            .commitment h3 {
-                font-size: 1.5rem !important;
-            }
-
-            .commitment p {
-                font-size: 1.15rem !important;
+            .commitment-section p {
+                font-size: 1.1rem !important;
             }
         }
 
@@ -496,14 +561,14 @@
                         <h3>🏆 AWS DeepRacer Champion</h3>
                         <p><strong>January 2025:</strong> Achieved remarkable rankings in AWS DeepRacer Student League</p>
                         <ul>
-                            <li>🇮🇳 India Ranking: 2nd out of 274 participants</li>
-                            <li>🌏 Asia Pacific: 13th out of 424 participants</li>
-                            <li>🌍 Global: 20th out of 1,316 participants</li>
+                            <li>2nd rank in India</li>
+                            <li>13th rank in APAC</li>
+                            <li>20th rank in the World 🌍</li>
                         </ul>
                     </div>
                     <div class="achievement-card">
                         <h3>🥉 Previous AWS Achievement</h3>
-                        <p><strong>September 2024:</strong> Secured 3rd rank in AWS DeepRacer Virtual Race at IIT Madras</p>
+                        <p>Secured <strong>3rd rank</strong> in AWS DeepRacer Virtual Race Sep'24 edition at IIT Madras</p>
                     </div>
                     <div class="achievement-card">
                         <h3>🗺️ Trip Coordinator</h3>
@@ -511,7 +576,7 @@
                     </div>
                     <div class="achievement-card">
                         <h3>🔬 Research Team Member</h3>
-                        <p><strong>Boundless Society:</strong> Contributing to research initiatives and academic projects</p>
+                        <p><strong>Boundless Society:</strong> Identifying potential speakers and sponsors, and assisting in the planning of the trips</p>
                     </div>
                     <div class="achievement-card">
                         <h3>✍️ Content Writer</h3>
@@ -560,34 +625,34 @@
                     </div>
                 </div>
                 <div style="margin-top: 3rem;">
-                    <div class="point-card vote-for-me">
+                    <div class="point-card why-vote-section">
                         <h3>🗳️ Why Vote for Me?</h3>
-                        <div class="point-content" style="margin-top: 1rem;">
-                            <div style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                        <div style="margin-top: 1.5rem;">
+                            <div class="vote-point">
                                 <span style="color: #22c55e; font-weight: bold; font-size: 1.2rem;">✓</span>
                                 <span>Proven track record in AWS competitions and societies.</span>
                             </div>
-                            <div style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <div class="vote-point">
                                 <span style="color: #22c55e; font-weight: bold; font-size: 1.2rem;">✓</span>
                                 <span>Balanced focus on tech, community, mentorship, and collaboration.</span>
                             </div>
-                            <div style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <div class="vote-point">
                                 <span style="color: #22c55e; font-weight: bold; font-size: 1.2rem;">✓</span>
                                 <span>Practical plans: tech sessions, offline meetups, and study circles.</span>
                             </div>
-                            <div style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <div class="vote-point">
                                 <span style="color: #22c55e; font-weight: bold; font-size: 1.2rem;">✓</span>
                                 <span>Advocacy-driven: open-door policy and feedback sessions each term.</span>
                             </div>
-                            <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <div class="vote-point">
                                 <span style="color: #22c55e; font-weight: bold; font-size: 1.2rem;">✓</span>
                                 <span>Committed to turning our region into a thriving, inclusive space.</span>
                             </div>
                         </div>
                     </div>
-                    <div class="point-card commitment" style="margin-top: 2rem;">
+                    <div class="point-card commitment-section" style="margin-top: 2rem;">
                         <h3>🤝 My Commitment to You</h3>
-                        <p style="margin-top: 1rem;">
+                        <p style="margin-top: 1.5rem;">
                             As your Regional Coordinator, I pledge to create an environment where technology meets community, where learning is collaborative, and where every student in the Chandigarh region has the support they need to excel. Together, we'll build a stronger, more connected, and more empowered community.
                         </p>
                     </div>
@@ -635,9 +700,9 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.background = 'rgba(15, 23, 42, 0.98)';
             } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
             }
         });
 
