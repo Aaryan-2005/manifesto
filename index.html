@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title>Aaryan Sahu - Regional Coordinator Chandigarh</title>
     <style>
         * {
@@ -197,17 +195,18 @@
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 3rem;
-            align-items: center;
+            align-items: start;
         }
 
         .profile-card {
             background: #0f172a;
-            padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            text-align: center;
             transition: transform 0.3s ease;
             border: 1px solid rgba(99, 102, 241, 0.2);
+            overflow: hidden;
+            height: 400px;
+            position: relative;
         }
 
         .profile-card:hover {
@@ -216,65 +215,67 @@
         }
 
         .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #6366f1, #8b5cf6);
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-            font-weight: bold;
+            width: 100%;
+            height: 100%;
+            position: relative;
         }
 
-        .profile-card h3 {
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .profile-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .profile-overlay h3 {
             color: #f1f5f9;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            margin: 0;
         }
 
-        .profile-card p {
-            color: #cbd5e1;
-        }
-
-        .contact-info {
-            margin-top: 1.5rem;
-            text-align: left;
-        }
-
-        .contact-info h4 {
-            color: #6366f1;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .contact-item {
-            margin-bottom: 1rem;
+        .about-text {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        .contact-item span {
-            font-size: 1.1rem;
-        }
-
-        .contact-item p {
+        .about-text p {
             color: #cbd5e1;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-text {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-text strong {
+            color: #6366f1;
         }
 
         .linkedin-button {
             display: inline-block;
             background: #0077b5;
             color: white;
-            padding: 8px 20px;
+            padding: 12px 24px;
             text-decoration: none;
-            border-radius: 20px;
+            border-radius: 25px;
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3);
-            font-size: 0.9rem;
+            font-size: 1rem;
             margin-top: 1rem;
         }
 
@@ -282,12 +283,6 @@
             background: #005885;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 119, 181, 0.4);
-        }
-
-        .about-content > div:last-child p {
-            color: #cbd5e1;
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
         }
 
         .achievements {
@@ -383,7 +378,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Special styling for "Why Vote for Me?" section */
         .why-vote-section h3 {
             font-size: 1.8rem !important;
             margin-bottom: 1.5rem;
@@ -402,7 +396,6 @@
             color: #e5e7eb;
         }
 
-        /* Special styling for "My Commitment to You" section */
         .commitment-section h3 {
             font-size: 1.8rem !important;
             margin-bottom: 1.5rem;
@@ -450,6 +443,19 @@
             border-top: 1px solid rgba(99, 102, 241, 0.2);
         }
 
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(45deg, #6366f1, #8b5cf6);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1001;
+            transition: transform 0.1s ease;
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -468,7 +474,6 @@
                 margin-top: 80px;
             }
 
-            /* Responsive adjustments for special sections */
             .why-vote-section h3,
             .commitment-section h3 {
                 font-size: 1.5rem !important;
@@ -481,19 +486,10 @@
             .commitment-section p {
                 font-size: 1.1rem !important;
             }
-        }
 
-        .scroll-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(45deg, #6366f1, #8b5cf6);
-            transform-origin: left;
-            transform: scaleX(0);
-            z-index: 1001;
-            transition: transform 0.1s ease;
+            .profile-card {
+                height: 300px;
+            }
         }
     </style>
 </head>
@@ -528,28 +524,26 @@
                 <h2>About Me</h2>
                 <div class="about-content">
                     <div class="profile-card">
-                        <div class="profile-image"><img Class="w-auto h-auto" src="image.jpeg" alt="profile image"></div>
-                        <h3>Aaryan Sahu</h3>
-                        <p>BS Data Science & Applications<br>IIT Madras</p>
-                        <p><strong>CGPA: 8.88</strong></p>
-                        
-                        <div class="contact-info">
-                            <h4>Contact Information</h4>
-                            <div class="contact-item">
-                                <span>📍</span>
-                                <p>Bhopal, Madhya Pradesh</p>
+                        <div class="profile-image">
+                            <img src="image.jpeg" alt="Aaryan Sahu - Profile Photo">
+                            <div class="profile-overlay">
+                                <h3>Aaryan Sahu</h3>
                             </div>
-                            <div class="contact-item">
-                                <span>📧</span>
-                                <p>24f2001366@ds.study.iitm.ac.in</p>
-                            </div>
-                            <a href="https://www.linkedin.com/in/aaryan-sahu-791790310" target="_blank" class="linkedin-button">LinkedIn Profile</a>
                         </div>
                     </div>
-                    <div>
+                    <div class="about-text">
                         <p>I am a dedicated student pursuing BS in Data Science and Applications from IIT Madras, currently at the Diploma level with a strong academic record of 8.88 CGPA. My passion lies in leveraging technology and data science to create meaningful impact in our community.</p>
                         <p>As an active member of various societies and organizations, I have consistently demonstrated leadership qualities and a commitment to excellence. My involvement in research, content creation, and volunteer work has equipped me with the skills necessary to effectively represent and serve the Chandigarh Region.</p>
                         <p>I believe in building bridges between students and administration, fostering a culture of collaboration, and ensuring that every voice in our region is heard and valued.</p>
+                        
+                        <p class="contact-text">
+                            <strong>Location:</strong> Bhopal, Madhya Pradesh<br>
+                            <strong>Email:</strong> 24f2001366@ds.study.iitm.ac.in
+                        </p>
+                        
+                        <div>
+                            <a href="https://www.linkedin.com/in/aaryan-sahu-791790310" target="_blank" class="linkedin-button">Connect on LinkedIn</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -665,7 +659,7 @@
         <section class="bottom-cta">
             <div class="container">
                 <h2>Vote Aaryan Sahu for Regional Coordinator</h2>
-                <p>Let’s build a community that codes, connects, and grows—together.</p>
+                <p>Let's turn our region into a connected, thriving, and student-first space.</p>
                 <p class="tagline">Disciplined. Dedicated. Driven by Community.</p>
             </div>
         </section>
